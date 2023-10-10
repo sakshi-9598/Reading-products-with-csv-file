@@ -1,10 +1,10 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('log_errors',1);
-ini_set('error_log', 'error_log.txt');
+// error_reporting(E_ALL);
+// ini_set('log_errors',1);
+// ini_set('error_log', 'error_log.txt');
 
-// $errorLogFile = fopen('error_log.txt','a');
+$errorLogFile = fopen('error_log.txt','a');
 $errorCount = 0;
 // $sucess = 0;
 function valid($sku, $cat_name, $name, $price){
@@ -13,22 +13,22 @@ function valid($sku, $cat_name, $name, $price){
     
     if (empty($name) || empty($sku) || empty($cat_name) || empty($price))
     {
-        // fwrite($errorLogFile, "Error: Missing mandatory field(s).\n");
-        error_log("Error: Missing mandatory field(s)");
+        fwrite($errorLogFile, "Error: Missing mandatory field(s).\n");
+        // error_log("Error: Missing mandatory field(s)");
         $errorCount++;
     }
     // Validate  SKU
     if (!ctype_alnum($sku)){
-        // fwrite($errorLogFile, 'SKU must contain only alphanumeric characters');
+        fwrite($errorLogFile, 'SKU must contain only alphanumeric characters');
         $errorCount++;
     }
     if(!preg_match('/^[a-zA-Z0-9]{8,10}$/', $sku)){
-        // fwrite($errorLogFile, "Invalid SKU format\n");
+        fwrite($errorLogFile, "Invalid SKU format\n");
         $errorCount++;
     }
     // Validate Price
     if (!is_numeric($price) || $price <= 0){
-        // fwrite($errorLogFile, "Error: Invalid Price");
+        fwrite($errorLogFile, "Error: Invalid Price");
         $errorCount++;
     }
 
