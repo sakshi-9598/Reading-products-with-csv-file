@@ -1,0 +1,6 @@
+"PRO_ID";"NAME";"SKU";"DESCRIPTION";"BRAND";"PRICE";"CATEGORY_NAME";"CATEGORY_DESC";"IMAGE";"WEIGHT";"DIMENSIONS"
+101;"Shoes";"ab3456mdo";"It is black";"Sky";1200.0;"Footwear";"best shoes ever";"sky.jpg";20.0;"30X20"
+102;"Tshirt";"bd8764mdo";"It is red";"Nicho";600.0;"clothes";"best tshirt ever";"tshirt.jpg";50.0;"XL"
+103;"Clips";"xy1234mdo";"It is black";"skin";50.0;"cosmetics";"best clips ever";"clips.jpg";6.0;"5X3"
+104;"Mobile";"mn6890jkl";"It is white";"vivo";30000.0;"gadgets";"best mobile ever";"mobile.jpg";60.0;"20X10"
+105;"Brush";"kl5775abc";"It is blue";"Colgate";10.0;"manjan";"best brush ever";"brush.jpg";10.0;"S-L"

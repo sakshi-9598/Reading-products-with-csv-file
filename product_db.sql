@@ -1,0 +1,58 @@
+use sakshidb;
+
+CREATE TABLE CSV_PRODUCTS(
+PRO_ID INT PRIMARY KEY,
+NAME VARCHAR(100) NOT NULL,
+SKU VARCHAR(50) NOT NULL,
+DESCRIPTION TEXT,
+BRAND VARCHAR(50),
+PRICE DECIMAL NOT NULL,
+CATEGORY_NAME VARCHAR(200),
+CATEGORY_DESC VARCHAR(500),
+IMAGE VARCHAR(255),
+WEIGHT DECIMAL,
+DIMENSIONS VARCHAR(200)
+);
+
+
+
+CREATE TABLE PRODUCTS(
+PRO_ID INT auto_increment PRIMARY KEY,
+NAME VARCHAR(100) NOT NULL,
+SKU VARCHAR(50) NOT NULL,
+DESCRIPTION TEXT,
+BRAND VARCHAR(50),
+PRICE DECIMAL NOT NULL,
+CAT_ID INT,
+IMAGE VARCHAR(255),
+WEIGHT DECIMAL,
+DIMENSIONS VARCHAR(200),
+FOREIGN KEY(CAT_ID) REFERENCES CATEGORY(CAT_ID)
+);
+
+DESC PRODUCTS;
+
+CREATE TABLE CATEGORY(
+CAT_ID INT AUTO_INCREMENT PRIMARY KEY,
+CATEGORY_AME VARCHAR(100),
+CATEGORY_DESC TEXT
+);
+
+INSERT INTO CSV_PRODUCTS (PRO_ID, NAME, SKU, DESCRIPTION, BRAND, PRICE, CATEGORY_NAME, CATEGORY_DESC,IMAGE, WEIGHT, DIMENSIONS)
+VALUES
+(101, 'Shoes', 'ab3456mdo', 'It is black', 'Sky', 1200, "Footwear", "best shoes ever", "sky.jpg", 20.1,"30X20"),
+(102, 'Tshirt', 'bd8764mdo', 'It is red', 'Nicho', 600, "clothes", "best tshirt ever", "tshirt.jpg", 50.0, "XL"),
+(103, 'Clips', 'xy1234mdo', 'It is black', 'skin', 50, "cosmetics", "best clips ever", "clips.jpg", 6,"5X3"),
+(104, 'Mobile', 'mn6890jkl', 'It is white', 'vivo', 30000, "gadgets", "best mobile ever", "mobile.jpg", 60,"20X10"),
+(105, 'Brush', 'kl5775abc', 'It is blue', 'Colgate', 10, "manjan", "best brush ever", "brush.jpg", 10,"S-L");
+
+SELECT * FROM CATEGORY;
+
+
+
+
+
+
+
+
+
