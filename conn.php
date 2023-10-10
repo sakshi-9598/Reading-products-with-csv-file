@@ -20,6 +20,8 @@ else{
 echo "<br>";
 $csvFile = fopen("CAT_PRO.csv","r");
 
+// $errorLogFile = fopen('error.log','a');
+
 
 //For fetching single(first row)
 // $row = fgetcsv($csvFile);
@@ -62,7 +64,7 @@ while(!feof($csvFile)){
     // echo "$dimentions <br>";  //"30x20"
 
     if (($i > 0) && (create($conn, $pro_id, $name, $sku, $description, $brand, $price, $cat_name, $cat_desc, $image, $weight, $dimentions))){
-        echo "<h1>$i st Product,  $name Created Successfully</h1>";
+        echo "<h1>$i Product,  $name Created Successfully</h1>";
     }
     else{
         if ($i === 0){
